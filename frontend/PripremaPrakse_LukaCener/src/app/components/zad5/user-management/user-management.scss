@@ -1,0 +1,23 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  gap: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.users-table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}

@@ -1,0 +1,45 @@
+<h2>User Management</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="user-form">
+
+  <label>Name</label>
+  <input type="text" formControlName="name" />
+  <div class="error" *ngIf="name.invalid && name.touched">
+    <span *ngIf="name.errors?.['required']">Ime je obavezno.</span>
+    <span *ngIf="name.errors?.['minlength']">Ime mora imati barem 3 znaka.</span>
+  </div>
+
+  <label>Email</label>
+  <input type="email" formControlName="email" />
+  <div class="error" *ngIf="email.invalid && email.touched">
+    <span *ngIf="email.errors?.['required']">Email je obavezan.</span>
+    <span *ngIf="email.errors?.['email']">Unesite validan email.</span>
+  </div>
+
+  <label>Phone</label>
+  <input type="text" formControlName="phone" />
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+
+<hr />
+
+<table class="users-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ime</th>
+      <th>Email</th>
+      <th>Telefon</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let u of users$ | async">
+      <td>{{ u.id }}</td>
+      <td>{{ u.name }}</td>
+      <td>{{ u.email }}</td>
+      <td>{{ u.phone }}</td>
+    </tr>
+  </tbody>
+</table>

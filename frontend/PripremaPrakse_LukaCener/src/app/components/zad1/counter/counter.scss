@@ -1,0 +1,35 @@
+.counter-wrapper {
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  width: 250px;
+  margin: 20px auto;
+  background: #f9f9f9;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      padding: 8px 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #4a90e2;
+      color: white;
+
+      &:hover {
+        background: #357ac4;
+      }
+    }
+  }
+}
